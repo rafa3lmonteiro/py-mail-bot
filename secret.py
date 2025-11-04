@@ -1,1 +1,1 @@
-passwd = 'yourpassword-token'
+passwd = 'yourpassword-token-here'

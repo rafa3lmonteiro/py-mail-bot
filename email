@@ -1,0 +1,12 @@
+Hello,
+
+This is a test message sent automatically by a Python email-sending script developed by Rafael Monteiro.
+
+The purpose of this email is only to validate that the SMTP configuration and the script are working as expected.
+
+Please ignore this message. No action is required.
+
+Best regards,
+
+----------------
+Rafael Monteiro

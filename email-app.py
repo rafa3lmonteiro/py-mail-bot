@@ -1,29 +1,28 @@
 #!/usr/bin/env python3
-# Envio dos Logs de backup utilizando a lib smtplib e o smtp do google
-# Rafael Monteiro - 20/06/2023
+
+# Send email using lib smtplib and google smtp service
+# Rafael Conte Monteiro - 09/2025
 
 import os
 import smtplib
 from email.message import EmailMessage
+from email.utils import formataddr
 from secret import passwd
 
-# Configurando o e-mail e senha
-EMAIL_ADDRESS = 'alerta-backup@gmail.com'
+EMAIL_ADDRESS = 'your-email-here@gmail.com'
 EMAIL_PASSWORD = passwd
-EMAIL_LIST = 'youremail1@gmail.com.br, youremail2@gmail.com.br, tecnologia@gmail.com.br'
+EMAIL_TO = 'your-email-destination@gmail.com'
 
-# Criando o e-mail
-with open('/home/automation/email-python/bkponline') as fp:
-    msg = EmailMessage()
+msg = EmailMessage()
+with open('./email') as fp:
     msg.set_content(fp.read())
 
-msg['Subject'] = 'Backup Log ACME - dbserver01'
-msg['From'] = EMAIL_ADDRESS
-msg['TO'] = EMAIL_LIST
+msg['Subject'] = 'Your email subject here'
+msg['From'] = formataddr(("Rafael Conte Monteiro", EMAIL_ADDRESS))
+msg['To'] = formataddr(("Recipient's name", EMAIL_TO))  # optional to include the recipient's name
 
-# Enviando o e-mail
-with smtplib.SMTP_SSL('smtp.gmail.com',465) as smtp:
-    smtp.login(EMAIL_ADDRESS,EMAIL_PASSWORD)
+with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+    smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
     smtp.send_message(msg)
 
 
