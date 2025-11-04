@@ -1,4 +1,4 @@
-# py-mail-bot – Simple Python Gmail SMTP 
+# py-mail-bot – simple Python gmail SMTP 
 
 **py-mail-bot** is a small Python script that sends an email using Gmail’s SMTP service.  
 It’s meant for learning and testing how to send emails programmatically with Python.
