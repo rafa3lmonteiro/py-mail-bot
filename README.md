@@ -13,7 +13,7 @@ The script:
 > Do **not** commit your real credentials or secrets to any public repository.
 
 ---
-
+   
 ## 1. How it works
 
 Main script (simplified):
